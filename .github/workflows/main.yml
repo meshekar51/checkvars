@@ -1,1 +1,19 @@
-
+name: vars check
+on: workflow_dispatch
+jobs:
+ checkvars:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Display GitHub variables
+      run: |
+        echo "Repository: $GITHUB_REPOSITORY"
+        echo "Branch or tag: $GITHUB_REF_NAME"
+        echo "Full reference: $GITHUB_REF"
+        echo "Commit: $GITHUB_SHA"
+        echo "Actor: $GITHUB_ACTOR"
+        echo "Workflow: $GITHUB_WORKFLOW"
+        echo "Job: $GITHUB_JOB"
+        echo "Run ID: $GITHUB_RUN_ID"
+    echo "Run number: $GITHUB_RUN_NUMBER"
+    echo "Runner OS: $RUNNER_OS"
+    echo "Workspace: $GITHUB_WORKSPACE"
